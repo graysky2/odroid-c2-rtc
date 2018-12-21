@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = linux-odroid-c2
+
+[Action]
+Description = Updating i2c RTC status to meson64.dtb...
+Depends = dtc
+When = PostTransaction
+Exec = /usr/bin/fdtput -t s /boot/dtbs/meson64_odroidc2.dtb /i2c@c1108500/pcf8563@51 status "okay"

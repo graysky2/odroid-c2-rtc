@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync hwclock on RTC shield to sysclock
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hwclock -s
+
+[Install]
+WantedBy=sysinit.target
