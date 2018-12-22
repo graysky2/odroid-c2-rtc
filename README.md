@@ -36,4 +36,5 @@ MODULES=( aml_i2c rtc_pcf8563 ... )
 
 ## Notes
 
-Currently (3.16.61), the sx865x module (touch screen driver) breaks the needed module to communicate with RTC shield. This package will blacklist it for us. The consequence of this is that anyone with the 3.5 inch LCD is SOL. If you have a fix for this, please send let me know.
+Currently, the _sx865x_ module needed to use the [3.5" touchscreen](https://wiki.odroid.com/accessory/display/3.5inch_lcd_shield/3.5inch_lcd_shield) breaks the needed module to communicate with RTC shield.  I have this code create a [blacklist file](https://github.com/graysky2/odroid-c2-rtc/blob/master/Makefile#L22) for sx865x to work-around.  A consequence of this is the touch screen won't work with the RTC.  If you know what is driving these errors, or have a fix, please let me know.  See [this](https://forum.odroid.com/viewtopic.php?f=139&t=33191) forum post for details.
+
